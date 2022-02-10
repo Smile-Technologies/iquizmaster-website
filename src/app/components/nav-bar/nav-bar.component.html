@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <img src="../../assets/images/iqm.jpg" alt="IQuizMaster" width="50" class="img-fluid mr-2">
+    <a class="navbar-brand">IQuizMaster</a>
+    <img class="navbar-toggler" src="../../../assets/images/Vector.png" type="button" data-toggle="collapse"
+        data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+        (click)="toggleNavbar()" aria-label="Toggle navigation">
+
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/home" (click)="toggleNavbar()">Home</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" (click)="toggleNavbar()">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="toggleNavbar()">Blog</a>
+            </li> -->
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/contact-us" (click)="toggleNavbar()">Contact
+                    Us</a>
+            </li>
+            <li class="nav-item">
+                <button class="button" (click)="open('register')">REGISTER</button>
+            </li>
+            <li class="nav-item">
+                <button class="button" (click)="open('login')">LOGIN</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- login component -->
+<ng-template #login let-modal>
+    <app-login (state)="state($event)"></app-login>
+</ng-template>
+
+<!-- register component -->
+<ng-template #register let-modal>
+    <app-register (state)="state($event)"></app-register>
+</ng-template>

@@ -1,0 +1,20 @@
+form > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+h2{
+    color: #FD749B;
+}
+input{
+    height: 54px;
+    width: 100%;
+    margin: 20px 0px 20px 0px;
+    padding: 0px 10px 0px 10px;
+    border: 1px solid #FD749B;
+    border-radius: 4px;
+}
+input:focus{
+    outline: none;
+}

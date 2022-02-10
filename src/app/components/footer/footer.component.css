@@ -1,0 +1,12 @@
+.container-fluid{
+    background-color: #151515;
+    color: #ffffff;
+    padding: 45px;
+}
+.pointer{
+    cursor: pointer;
+}
+
+.fa{
+    font-size: 28px;
+}
