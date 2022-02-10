@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { BookADemoComponent } from './components/book-a-demo/book-a-demo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     ContactUsComponent,
     LoginComponent,
     RegisterComponent,
-    FooterComponent
+    FooterComponent,
+    BookADemoComponent,
   ],
   imports: [
     BrowserModule,

@@ -130,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "IQuizMaster-Website"
+  "defaultProject": "IQuizMaster-Website",
+  "cli": {
+    "analytics": false
+  }
 }

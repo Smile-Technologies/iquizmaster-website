@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BookADemoComponent } from './components/book-a-demo/book-a-demo.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'contact-us',
     component: ContactUsComponent
+  },
+  {
+    path: 'book-a-demo',
+    component: BookADemoComponent
   }
 ];
 
