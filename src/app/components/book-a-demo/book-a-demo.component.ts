@@ -12,7 +12,9 @@ import { ToastService } from 'src/app/toast.service';
 })
 export class BookADemoComponent implements OnInit {
 
+  submitted: boolean = false;
   createScheduleForm: FormGroup;
+  isInstitute: boolean = false
   constructor(private fb: FormBuilder,
     private emailsService: EmailsService,
     public toastService: ToastService,
@@ -27,9 +29,10 @@ export class BookADemoComponent implements OnInit {
     this.createScheduleForm = this.fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       designation: ['', Validators.required],
+      insName: [''],
       starts_at1: ['', Validators.required],
       ends_at1: ['', Validators.required],
       scheduled_date1: ['', Validators.required],
@@ -42,13 +45,24 @@ export class BookADemoComponent implements OnInit {
     return this.createScheduleForm.controls;
   }
 
+  onSelectDesignation() {
+    const desig = this.createScheduleForm.value.designation
+    if (desig === "Institution") {
+      this.isInstitute = true
+    } else {
+      this.isInstitute = false
+    }
+  }
+
+
   showSuccess() {
-    this.toastService.show('Demo Registration success.', {
-      classname: 'bg-success text-light',
-      delay: 2000,
-      autohide: true,
-      headertext: 'Success'
-    });
+    this.toastService.show("Thank you for booking a demo with us. We will get back to you within 24 hours of your submission. Contact us via email at customersupport@iquizmaster.com for any queries."
+      , {
+        classname: 'bg-success text-light',
+        delay: 4000,
+        autohide: true,
+        headertext: 'Success'
+      });
   }
 
   showError() {
@@ -61,13 +75,18 @@ export class BookADemoComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.createScheduleForm.value);    
-    this.emailsService.sendScheduleMailRequest(this.createScheduleForm.value).subscribe(data => {
-      console.log(data);
-      this.resetForm()
-      this.showSuccess();
-      this.router.navigate(['home']);
-    })
+    this.submitted = true;
+    console.log(this.createScheduleForm.value);
+    if (this.createScheduleForm.valid) {
+      this.emailsService.sendScheduleMailRequest(this.createScheduleForm.value).subscribe(data => {
+        console.log(data);
+        this.resetForm()
+        this.showSuccess();
+        this.router.navigate(['home']);
+      }, error => {
+        console.log(error)
+      })
+    }
   }
 
   resetForm() {

@@ -5,24 +5,45 @@
             <h1>Book a Demo</h1>
             <div class="row form-group">
                 <div class="col-12">
-                    <input type="text" formControlName="fname" placeholder="FIRST NAME*">
+                    <input type="text" [ngClass]="{'is-invalid': submitted && f.fname.errors }" formControlName="fname"
+                        placeholder="FIRST NAME*">
+                    <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
+                        <div *ngIf="f.fname.errors.required">First Name is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-12">
+                    <input type="text" [ngClass]="{'is-invalid': submitted && f.lname.errors }" formControlName="lname"
+                        placeholder="LAST NAME*">
+                    <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
+                        <div *ngIf="f.lname.errors.required">Last Name is required</div>
+                    </div>
                 </div>
 
             </div>
             <div class="row form-group">
                 <div class="col-12">
-                    <input type="text" formControlName="lname" placeholder="LAST NAME*">
+                    <input type="email" required formControlName="email" placeholder="EMAIL*"
+                        [ngClass]="{'is-invalid': submitted && f.email.errors }">
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.email">Please Check Email field</div>
+                    </div>
                 </div>
-
             </div>
             <div class="row form-group">
                 <div class="col-12">
-                    <input type="text" formControlName="email" placeholder="EMAIL*">
-                </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-12">
-                    <input type="number" formControlName="phone" placeholder="PHONE NUMBER">
+                    <input type="number" formControlName="phone" placeholder="PHONE NUMBER"
+                        [ngClass]="{'is-invalid': submitted && f.phone.errors }">
+                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Phone number is required</div>
+                    </div>
+                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.pattern">Please Check phone number</div>
+                    </div>
                 </div>
             </div>
             <!-- <div class="row form-group">
@@ -33,50 +54,87 @@
             <div class="row form-group">
                 <div class="col-12">
                     <label>DESIGNATION :</label>
-                    <select name="cars" id="designation" formControlName="designation">
-                        <!-- <option value="" disabled selected>DESIGNATION</option> -->
+                    <select name="cars" id="designation" (change)="onSelectDesignation()" formControlName="designation"
+                        [ngClass]="{'is-invalid': submitted && f.designation.errors }">
                         <option value="Institution">Institution</option>
                         <option value="Teacher">Teacher</option>
                         <option value="Student">Student</option>
                     </select>
+                    <div *ngIf="submitted && f.designation.errors" class="invalid-feedback">
+                        <div *ngIf="f.designation.errors.required">Please select designation</div>
+                    </div>
                 </div>
             </div>
+
+            <div class="ins-name" id="ins-name" *ngIf="isInstitute">
+                <div class="row form-group">
+                    <div class="col-12">
+                        <label>INSTITUTION NAME :</label>
+                        <input type="text" formControlName="insName">
+                    </div>
+                </div>
+            </div>
+
             <div class="row form-group">
                 <div class="col-12">
                     <label>PREFERRED DATE 1 :</label>
-                    <input type="date" formControlName="scheduled_date1">
+                    <input type="date" formControlName="scheduled_date1"
+                        [ngClass]="{'is-invalid': submitted && f.scheduled_date1.errors }">
+                    <div *ngIf="submitted && f.scheduled_date1.errors" class="invalid-feedback">
+                        <div *ngIf="f.scheduled_date1.errors.required">Prefered date 1 is required</div>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-6 form-group">
                     <label>PREFERRED START TIME 1 :</label>
-                    <input type="time" formControlName="starts_at1">
+                    <input type="time" formControlName="starts_at1"
+                        [ngClass]="{'is-invalid': submitted && f.starts_at1.errors }">
+                    <div *ngIf="submitted && f.starts_at1.errors" class="invalid-feedback">
+                        <div *ngIf="f.starts_at1.errors.required">Start Time 1 is required</div>
+                    </div>
                 </div>
                 <div class="col-6 form-group">
                     <label>PREFERRED END TIME 1 :</label>
-                    <input type="time" formControlName="ends_at1">
+                    <input type="time" formControlName="ends_at1"
+                        [ngClass]="{'is-invalid': submitted && f.ends_at1.errors }">
+                    <div *ngIf="submitted && f.ends_at1.errors" class="invalid-feedback">
+                        <div *ngIf="f.ends_at1.errors.required">End Time 1 is required</div>
+                    </div>
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-12">
                     <label>PREFERRED DATE 2 :</label>
-                    <input type="date" formControlName="scheduled_date2">
+                    <input type="date" formControlName="scheduled_date2"
+                        [ngClass]="{'is-invalid': submitted && f.scheduled_date2.errors }">
+                    <div *ngIf="submitted && f.scheduled_date2.errors" class="invalid-feedback">
+                        <div *ngIf="f.scheduled_date2.errors.required">Prefered date 2 is required</div>
+                    </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-6 form-group">
                     <label>PREFERRED START TIME 2 :</label>
-                    <input type="time" formControlName="starts_at2">
+                    <input type="time" formControlName="starts_at2"
+                        [ngClass]="{'is-invalid': submitted && f.starts_at2.errors }">
+                    <div *ngIf="submitted && f.starts_at2.errors" class="invalid-feedback">
+                        <div *ngIf="f.starts_at2.errors.required">Start Time 2 is required</div>
+                    </div>
                 </div>
                 <div class="col-6 form-group">
                     <label>PREFERRED END TIME 2 :</label>
-                    <input type="time" formControlName="ends_at2">
+                    <input type="time" formControlName="ends_at2"
+                        [ngClass]="{'is-invalid': submitted && f.ends_at2.errors }">
+                    <div *ngIf="submitted && f.ends_at2.errors" class="invalid-feedback">
+                        <div *ngIf="f.ends_at2.errors.required">End Time 2 is required</div>
+                    </div>
                 </div>
             </div>
             <div class="row my-5">
                 <div class="col">
                     <!-- [disabled]="createScheduleForm.invalid" -->
-                    <button class="button" [disabled]="createScheduleForm.invalid" (click)="onSubmit()">SUBMIT</button>
+                    <button class="button" (click)="onSubmit()">SUBMIT</button>
                 </div>
             </div>
         </div>
