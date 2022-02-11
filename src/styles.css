@@ -3,8 +3,8 @@ body, html{
     overflow-x: hidden;
 }
 .button{
-    width: 157px;
-    height: 54px;
+    width: 160px;
+    height: 48px;
     background: linear-gradient(178.18deg, #FD749B -13.56%, #281AC8 158.3%);
     box-sizing: border-box;
     border-radius: 100px;

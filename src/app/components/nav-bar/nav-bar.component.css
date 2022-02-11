@@ -1,5 +1,5 @@
 .navbar-brand{
-    font-size: 34px;
+    font-size: 28px;
     font-weight: bolder;
     padding: .25rem .75rem;
 }
@@ -13,7 +13,7 @@
     margin-right: 15px;
 }
 .navbar-nav li a{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
 }

@@ -30,10 +30,10 @@ export class NavBarComponent implements OnInit {
   }
   open(content) {
     if (content === 'login') {
-      window.open('https://iquizmaster.com/#/login', '_blank')
+      window.open('https://app.iquizmaster.com/#/login', '_blank')
     }
     else {
-      window.open('https://iquizmaster.com/#/register', '_blank')
+      window.open('https://app.iquizmaster.com/#/register', '_blank')
     }
     // this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', centered: true }).result.then((result) => {
     //   this.closeResult = `Closed with: ${result}`;
