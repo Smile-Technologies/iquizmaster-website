@@ -28,13 +28,12 @@
     .navbar-nav li a{
         font-size: 16px;
     }
-    .button {
-        width: 125px;
-        height: 45px;
-    }
     .navbar-nav li {
         margin-left: 10px;
         margin-right: 10px;
+    }
+    .btn{
+        padding: 7px 10px;
     }
 }
 
@@ -52,8 +51,6 @@
         padding: 10px 0px;
     }
     .button {
-        width: 110px;
-        height: 37px;
         font-size: 13px;
     }
     .navbar-nav li {
@@ -61,6 +58,23 @@
         margin-right: 10px;
     }
 }
-
+@media screen and (max-width:767px) {
+    li.nav-item .button {
+        width: 100%;
+        background: transparent;
+        color: rgba(0,0,0,.55);
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: unset;
+        padding: 0.5rem 0;
+        border-radius: 0;
+        box-shadow: none;
+        text-align: left;
+    }
+    li.nav-item .button.active{
+        border-bottom: 3px solid #FD749B;
+    }
+}
 
 

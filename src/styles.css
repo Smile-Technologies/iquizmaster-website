@@ -3,22 +3,25 @@ body, html{
     overflow-x: hidden;
 }
 .button{
-    width: 160px;
-    height: 48px;
+    /* width: 160px;
+    height: 48px; */
     background: linear-gradient(178.18deg, #FD749B -13.56%, #281AC8 158.3%);
     box-sizing: border-box;
     border-radius: 100px;
     color: #ffffff;
     border: none;
     outline: none;
+    padding: 10px 25px;
+    text-transform: uppercase;
 }
 .button_white{
-    width: 157px;
-    height: 54px;
+    width: auto;
+    height: auto;
     background: #ffffff;
     box-sizing: border-box;
     border-radius: 100px;
     color: linear-gradient(178.18deg, #FD749B -13.56%, #281AC8 158.3%);
     border: none;
     outline: none;
+    padding: 10px 25px;
 }

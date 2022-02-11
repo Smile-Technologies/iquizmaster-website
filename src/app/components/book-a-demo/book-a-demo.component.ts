@@ -14,7 +14,7 @@ export class BookADemoComponent implements OnInit {
 
   submitted: boolean = false;
   createScheduleForm: FormGroup;
-  isInstitute: boolean = false
+  isInstitute: boolean = false;
   constructor(private fb: FormBuilder,
     private emailsService: EmailsService,
     public toastService: ToastService,
@@ -22,7 +22,7 @@ export class BookADemoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.initForm()
+    this.initForm();
   }
 
   private initForm() {
