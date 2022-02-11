@@ -36,6 +36,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
   open() {
-    window.open('https://iquizmaster-new.netlify.app/#/register', '_blank')
+    window.open('https://iquizmaster.com/#/register', '_blank')
   }
 }

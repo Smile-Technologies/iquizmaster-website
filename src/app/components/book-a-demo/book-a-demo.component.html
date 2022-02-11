@@ -1,84 +1,84 @@
 <div class="container-fluid mt-5">
-   
-   <form>
-    <div class="container text-center">
-        <h1>Book a Demo</h1>
-        <div class="row form-group">
-            <div class="col-12">
-                <input type="text" placeholder="FIRST NAME*">
-            </div>
 
-        </div>
-        <div class="row form-group">
-            <div class="col-12">
-                <input type="text" placeholder="LAST NAME*">
-            </div>
+    <form [formGroup]="createScheduleForm">
+        <div class="container text-center">
+            <h1>Book a Demo</h1>
+            <div class="row form-group">
+                <div class="col-12">
+                    <input type="text" formControlName="fname" placeholder="FIRST NAME*">
+                </div>
 
-        </div>
-        <div class="row form-group">
-            <div class="col-12">
-                <input type="text" placeholder="EMAIL*">
             </div>
-        </div>
-        <div class="row form-group">
-            <div class="col-12">
-                <input type="number" placeholder="PHONE NUMBER">
+            <div class="row form-group">
+                <div class="col-12">
+                    <input type="text" formControlName="lname" placeholder="LAST NAME*">
+                </div>
+
             </div>
-        </div>
-        <!-- <div class="row form-group">
+            <div class="row form-group">
+                <div class="col-12">
+                    <input type="text" formControlName="email" placeholder="EMAIL*">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-12">
+                    <input type="number" formControlName="phone" placeholder="PHONE NUMBER">
+                </div>
+            </div>
+            <!-- <div class="row form-group">
             <div class="col">
                 <textarea placeholder="YOUR COMMENT" cols="30" rows="10"></textarea>
             </div>
         </div> -->
-        <div class="row form-group">
-            <div class="col-12">
-                <label>DESIGNATION :</label>
-                <select name="cars" id="designation">
-                    <!-- <option value="" disabled selected>DESIGNATION</option> -->
-                    <option value="admin">Institution</option>
-                    <option value="teacher">Teacher</option>
-                    <option value="student">Student</option>
-                  </select>
+            <div class="row form-group">
+                <div class="col-12">
+                    <label>DESIGNATION :</label>
+                    <select name="cars" id="designation" formControlName="designation">
+                        <!-- <option value="" disabled selected>DESIGNATION</option> -->
+                        <option value="Institution">Institution</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Student">Student</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-12">
+                    <label>PREFERRED DATE 1 :</label>
+                    <input type="date" formControlName="scheduled_date1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 form-group">
+                    <label>PREFERRED START TIME 1 :</label>
+                    <input type="time" formControlName="starts_at1">
+                </div>
+                <div class="col-6 form-group">
+                    <label>PREFERRED END TIME 1 :</label>
+                    <input type="time" formControlName="ends_at1">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-12">
+                    <label>PREFERRED DATE 2 :</label>
+                    <input type="date" formControlName="scheduled_date2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 form-group">
+                    <label>PREFERRED START TIME 2 :</label>
+                    <input type="time" formControlName="starts_at2">
+                </div>
+                <div class="col-6 form-group">
+                    <label>PREFERRED END TIME 2 :</label>
+                    <input type="time" formControlName="ends_at2">
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col">
+                    <!-- [disabled]="createScheduleForm.invalid" -->
+                    <button class="button" [disabled]="createScheduleForm.invalid" (click)="onSubmit()">SUBMIT</button>
+                </div>
             </div>
         </div>
-        <div class="row form-group">
-            <div class="col-12">
-                <label>PREFERRED DATE 1 :</label>
-                 <input type="date">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 form-group">
-                <label>PREFERRED START TIME 1 :</label>
-                 <input type="time">
-            </div>
-            <div class="col-6 form-group">
-                <label>PREFERRED END TIME 1 :</label>
-                 <input type="time">
-            </div>
-        </div>
-        <div class="row form-group">
-            <div class="col-12">
-                <label>PREFERRED DATE 2 :</label>
-                 <input type="date">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-6 form-group">
-                <label>PREFERRED START TIME 2 :</label>
-                 <input type="time">
-            </div>
-            <div class="col-6 form-group">
-                <label>PREFERRED END TIME 2 :</label>
-                 <input type="time">
-            </div>
-        </div>
-        <div class="row my-5">
-            <div class="col">
-                <button class="button">SUBMIT</button>
-            </div>
-        </div>
-    </div>
-   </form>
-    
+    </form>
 </div>
