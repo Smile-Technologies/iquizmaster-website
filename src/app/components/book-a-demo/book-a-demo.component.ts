@@ -33,12 +33,12 @@ export class BookADemoComponent implements OnInit {
       phone: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       designation: ['', Validators.required],
       insName: [''],
-      starts_at1: ['', Validators.required],
-      ends_at1: ['', Validators.required],
-      scheduled_date1: ['', Validators.required],
-      starts_at2: ['', Validators.required],
-      ends_at2: ['', Validators.required],
-      scheduled_date2: ['', Validators.required],
+      starts_at1: [''],
+      ends_at1: [''],
+      scheduled_date1: [''],
+      starts_at2: [''],
+      ends_at2: [''],
+      scheduled_date2: [''],
     });
   }
   get f() {

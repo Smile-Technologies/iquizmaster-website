@@ -1,6 +1,6 @@
 .navbar-brand{
     font-size: 28px;
-    font-weight: bolder;
+    /* font-weight: bolder; */
     padding: .25rem .75rem;
 }
 .navbar-nav{

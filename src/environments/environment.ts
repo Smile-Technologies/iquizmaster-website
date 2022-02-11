@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // base_api_url: 'https://www.api.insightmirror.in/api'
-  base_api_url: 'http://localhost:5000/api',
+  base_api_url: 'https://www.api.insightmirror.in/api'
+  // base_api_url: 'http://localhost:5000/api',
 };
 
 /*

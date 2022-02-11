@@ -53,7 +53,7 @@
         </div> -->
             <div class="row form-group">
                 <div class="col-12">
-                    <label>DESIGNATION :</label>
+                    <label>Designation :</label>
                     <select name="cars" id="designation" (change)="onSelectDesignation()" formControlName="designation"
                         [ngClass]="{'is-invalid': submitted && f.designation.errors }">
                         <option value="Institution">Institution</option>
@@ -68,7 +68,7 @@
             <div class="ins-name" id="ins-name" *ngIf="isInstitute">
                 <div class="row form-group">
                     <div class="col-12">
-                        <label>INSTITUTION NAME :</label>
+                        <label>Institution Name :</label>
                         <input type="text" formControlName="insName">
                     </div>
                 </div>
@@ -76,58 +76,52 @@
 
             <div class="row form-group">
                 <div class="col-12">
-                    <label>PREFERRED DATE 1 :</label>
-                    <input type="date" formControlName="scheduled_date1"
-                        [ngClass]="{'is-invalid': submitted && f.scheduled_date1.errors }">
-                    <div *ngIf="submitted && f.scheduled_date1.errors" class="invalid-feedback">
-                        <div *ngIf="f.scheduled_date1.errors.required">Prefered date 1 is required</div>
-                    </div>
+                    <label>Preferred Date(Option-1) :</label>
+                    <input type="date" formControlName="scheduled_date1">
+                    <!-- <div *ngIf="submitted && f.scheduled_date1.errors" class="invalid-feedback">
+                        <div *ngIf="f.scheduled_date1.errors.required">Preferred Date(Option-1) is required</div>
+                    </div> -->
                 </div>
             </div>
             <div class="row">
                 <div class="col-6 form-group">
-                    <label>PREFERRED START TIME 1 :</label>
-                    <input type="time" formControlName="starts_at1"
-                        [ngClass]="{'is-invalid': submitted && f.starts_at1.errors }">
-                    <div *ngIf="submitted && f.starts_at1.errors" class="invalid-feedback">
-                        <div *ngIf="f.starts_at1.errors.required">Start Time 1 is required</div>
-                    </div>
+                    <label>Preferred Start Time(Option-1) :</label>
+                    <input type="time" formControlName="starts_at1">
+                    <!-- <div *ngIf="submitted && f.starts_at1.errors" class="invalid-feedback">
+                        <div *ngIf="f.starts_at1.errors.required">Preferred Start Time(Option-1) is required</div>
+                    </div> -->
                 </div>
                 <div class="col-6 form-group">
-                    <label>PREFERRED END TIME 1 :</label>
-                    <input type="time" formControlName="ends_at1"
-                        [ngClass]="{'is-invalid': submitted && f.ends_at1.errors }">
-                    <div *ngIf="submitted && f.ends_at1.errors" class="invalid-feedback">
-                        <div *ngIf="f.ends_at1.errors.required">End Time 1 is required</div>
-                    </div>
+                    <label>Preferred End Time(Option-1) :</label>
+                    <input type="time" formControlName="ends_at1">
+                    <!-- <div *ngIf="submitted && f.ends_at1.errors" class="invalid-feedback">
+                        <div *ngIf="f.ends_at1.errors.required">Preferred End Time(Option-1) is required</div>
+                    </div> -->
                 </div>
             </div>
             <div class="row form-group">
                 <div class="col-12">
-                    <label>PREFERRED DATE 2 :</label>
-                    <input type="date" formControlName="scheduled_date2"
-                        [ngClass]="{'is-invalid': submitted && f.scheduled_date2.errors }">
-                    <div *ngIf="submitted && f.scheduled_date2.errors" class="invalid-feedback">
-                        <div *ngIf="f.scheduled_date2.errors.required">Prefered date 2 is required</div>
-                    </div>
+                    <label>Preferred Date(Option-2) :</label>
+                    <input type="date" formControlName="scheduled_date2">
+                    <!-- <div *ngIf="submitted && f.scheduled_date2.errors" class="invalid-feedback">
+                        <div *ngIf="f.scheduled_date2.errors.required">Preferred Date(Option-2) is required</div>
+                    </div> -->
                 </div>
             </div>
             <div class="row">
                 <div class="col-6 form-group">
-                    <label>PREFERRED START TIME 2 :</label>
-                    <input type="time" formControlName="starts_at2"
-                        [ngClass]="{'is-invalid': submitted && f.starts_at2.errors }">
-                    <div *ngIf="submitted && f.starts_at2.errors" class="invalid-feedback">
-                        <div *ngIf="f.starts_at2.errors.required">Start Time 2 is required</div>
-                    </div>
+                    <label>Preferred Start Time(Option-2) :</label>
+                    <input type="time" formControlName="starts_at2">
+                    <!-- <div *ngIf="submitted && f.starts_at2.errors" class="invalid-feedback">
+                        <div *ngIf="f.starts_at2.errors.required">Preferred Start Time(Option-2) is required</div>
+                    </div> -->
                 </div>
                 <div class="col-6 form-group">
-                    <label>PREFERRED END TIME 2 :</label>
-                    <input type="time" formControlName="ends_at2"
-                        [ngClass]="{'is-invalid': submitted && f.ends_at2.errors }">
-                    <div *ngIf="submitted && f.ends_at2.errors" class="invalid-feedback">
-                        <div *ngIf="f.ends_at2.errors.required">End Time 2 is required</div>
-                    </div>
+                    <label>Preferred End Time(Option-2) :</label>
+                    <input type="time" formControlName="ends_at2">
+                    <!-- <div *ngIf="submitted && f.ends_at2.errors" class="invalid-feedback">
+                        <div *ngIf="f.ends_at2.errors.required">Preferred End Time(Option-2) is required</div>
+                    </div> -->
                 </div>
             </div>
             <div class="row my-5">
