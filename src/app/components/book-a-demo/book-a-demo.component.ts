@@ -45,14 +45,14 @@ export class BookADemoComponent implements OnInit {
     return this.createScheduleForm.controls;
   }
 
-  onSelectDesignation() {
-    const desig = this.createScheduleForm.value.designation
-    if (desig === "Institution") {
-      this.isInstitute = true
-    } else {
-      this.isInstitute = false
-    }
-  }
+  // onSelectDesignation() {
+  //   const desig = this.createScheduleForm.value.designation
+  //   if (desig === "Institution") {
+  //     this.isInstitute = true
+  //   } else {
+  //     this.isInstitute = false
+  //   }
+  // }
 
 
   showSuccess() {

@@ -51,10 +51,18 @@
                 <textarea placeholder="YOUR COMMENT" cols="30" rows="10"></textarea>
             </div>
         </div> -->
+            <div class="ins-name" id="ins-name">
+                <div class="row form-group">
+                    <div class="col-12">
+                        <label>Institution Name(Optional) :</label>
+                        <input type="text" formControlName="insName">
+                    </div>
+                </div>
+            </div>
             <div class="row form-group">
                 <div class="col-12">
                     <label>Designation :</label>
-                    <select name="cars" id="designation" (change)="onSelectDesignation()" formControlName="designation"
+                    <select name="cars" id="designation" formControlName="designation"
                         [ngClass]="{'is-invalid': submitted && f.designation.errors }">
                         <option value="Institution">Institution</option>
                         <option value="Teacher">Teacher</option>
@@ -62,14 +70,6 @@
                     </select>
                     <div *ngIf="submitted && f.designation.errors" class="invalid-feedback">
                         <div *ngIf="f.designation.errors.required">Please select designation</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ins-name" id="ins-name" *ngIf="isInstitute">
-                <div class="row form-group">
-                    <div class="col-12">
-                        <label>Institution Name :</label>
-                        <input type="text" formControlName="insName">
                     </div>
                 </div>
             </div>
