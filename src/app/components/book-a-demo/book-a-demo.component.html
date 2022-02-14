@@ -36,7 +36,7 @@
             </div>
             <div class="row form-group">
                 <div class="col-12">
-                    <input type="number" formControlName="phone" placeholder="PHONE NUMBER"
+                    <input type="number" formControlName="phone" placeholder="PHONE NUMBER*"
                         [ngClass]="{'is-invalid': submitted && f.phone.errors }">
                     <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                         <div *ngIf="f.phone.errors.required">Phone number is required</div>
@@ -64,9 +64,8 @@
                     <label>Designation :</label>
                     <select name="cars" id="designation" formControlName="designation"
                         [ngClass]="{'is-invalid': submitted && f.designation.errors }">
-                        <option value="Institution">Institution</option>
-                        <option value="Teacher">Teacher</option>
-                        <option value="Student">Student</option>
+                        <option value='' disabled selected>Select designation</option>
+                        <option *ngFor="let title of designData" [value]="title.name">{{title.name}}</option>
                     </select>
                     <div *ngIf="submitted && f.designation.errors" class="invalid-feedback">
                         <div *ngIf="f.designation.errors.required">Please select designation</div>

@@ -15,6 +15,18 @@ export class BookADemoComponent implements OnInit {
   submitted: boolean = false;
   createScheduleForm: FormGroup;
   isInstitute: boolean = false;
+  designData: Array<any> = [
+    { name: 'Correspondent'},
+    { name: 'Principal'},
+    { name: 'Vice Principal'},
+    { name: 'Admin Head'},
+    { name: 'HOD'},
+    { name: 'Head Master'},
+    { name: 'Asst. Head Master'},
+    { name: 'Teacher'},
+    { name: 'Business Head'},
+    { name: 'Custom'},
+  ];
   constructor(private fb: FormBuilder,
     private emailsService: EmailsService,
     public toastService: ToastService,

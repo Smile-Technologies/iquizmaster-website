@@ -50,9 +50,9 @@ label{
     .mobile-hidden{
         display: none;
     }
-   .container .row:nth-child(odd){
+   /* .container .row:nth-child(odd){
         flex-direction: column-reverse;
-    }
+    } */
     .get_started{
         display: flex;
         justify-content: space-around;
@@ -63,4 +63,4 @@ label{
     .discover{
         margin-top: 15px;
     }
-    }
+}
