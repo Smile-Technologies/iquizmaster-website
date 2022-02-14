@@ -17,6 +17,18 @@ body, html{
     background: #ffffff;
     color: black;
 }
+.banner-sec-bg {
+    /* background: #dd66a1;
+    background-image: linear-gradient( 
+140deg, #EADEDB 0%, #BC70A4 50%, #BFD641 75%); */
+    /* background-image: linear-gradient(#dd66a1, #3c22c3); */
+    background-image: linear-gradient(#dd66a1, #2706cf);
+}
+.banner-sec-bg .banner-bg{
+    width: 100%;
+    position: relative;
+    /* bottom:-1px; */
+}
 
 @media screen and (max-width:480px) {
     .button{
