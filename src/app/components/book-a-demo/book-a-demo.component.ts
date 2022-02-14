@@ -14,19 +14,20 @@ export class BookADemoComponent implements OnInit {
 
   submitted: boolean = false;
   createScheduleForm: FormGroup;
-  isInstitute: boolean = false;
+  isCustom: boolean = false;
   designData: Array<any> = [
-    { name: 'Correspondent'},
-    { name: 'Principal'},
-    { name: 'Vice Principal'},
-    { name: 'Admin Head'},
-    { name: 'HOD'},
-    { name: 'Head Master'},
-    { name: 'Asst. Head Master'},
-    { name: 'Teacher'},
-    { name: 'Business Head'},
-    { name: 'Custom'},
+    { name: 'Correspondent' },
+    { name: 'Principal' },
+    { name: 'Vice Principal' },
+    { name: 'Admin Head' },
+    { name: 'HOD' },
+    { name: 'Head Master' },
+    { name: 'Asst. Head Master' },
+    { name: 'Teacher' },
+    { name: 'Business Head' },
+    { name: 'Custom' },
   ];
+  formData: any = [];
   constructor(private fb: FormBuilder,
     private emailsService: EmailsService,
     public toastService: ToastService,
@@ -44,6 +45,7 @@ export class BookADemoComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       designation: ['', Validators.required],
+      cusDesign: [''],
       insName: [''],
       starts_at1: [''],
       ends_at1: [''],
@@ -57,14 +59,14 @@ export class BookADemoComponent implements OnInit {
     return this.createScheduleForm.controls;
   }
 
-  // onSelectDesignation() {
-  //   const desig = this.createScheduleForm.value.designation
-  //   if (desig === "Institution") {
-  //     this.isInstitute = true
-  //   } else {
-  //     this.isInstitute = false
-  //   }
-  // }
+  onSelectDesignation() {
+    const design = this.createScheduleForm.value.designation
+    if (design === "Custom") {
+      this.isCustom = true
+    } else {
+      this.isCustom = false
+    }
+  }
 
 
   showSuccess() {
@@ -90,7 +92,12 @@ export class BookADemoComponent implements OnInit {
     this.submitted = true;
     console.log(this.createScheduleForm.value);
     if (this.createScheduleForm.valid) {
-      this.emailsService.sendScheduleMailRequest(this.createScheduleForm.value).subscribe(data => {
+      this.formData = this.createScheduleForm.value;
+      if (this.formData.designation === 'Custom') {
+        this.formData.designation = this.createScheduleForm.value.designation + ', ' + this.createScheduleForm.value.cusDesign;
+      }
+      console.log("formData:::", this.formData);
+      this.emailsService.sendScheduleMailRequest(this.formData).subscribe(data => {
         console.log(data);
         this.resetForm()
         this.showSuccess();

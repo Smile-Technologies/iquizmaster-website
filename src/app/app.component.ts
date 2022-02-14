@@ -9,4 +9,7 @@ import { Location, PopStateEvent } from "@angular/common";
 })
 export class AppComponent {
   title = 'IQuizMaster-Website'; 
+  constructor() {    
+    console.log('App Started....!')
+  }
 }
