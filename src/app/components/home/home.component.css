@@ -127,5 +127,8 @@ hr{
         .banner-sec-bg .banner-bg{
             margin-top: 20px;
         }
+        .container.page-wrap .row:nth-child(odd){
+            flex-direction: column-reverse;
+        }
     }
     
