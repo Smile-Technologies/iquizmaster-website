@@ -67,6 +67,10 @@ hr{
     color: #f7376d ;
     border-radius: 100px;
 }
+.container.page-wrap .row:nth-child(even) .small_img{
+    margin: 0 auto;
+    display: block;
+}
 @media(max-width:1199px){
     .container-fluid{
         background-size: 100% 19%;
@@ -78,6 +82,12 @@ hr{
     }
 }
 @media only screen and (max-width: 600px) {
+    .small_img{
+        width: 400px;
+        /* height: 300px; */
+        max-width: 100%;
+        height: auto;
+    }
     .container-fluid{
         background-size: 100% 16%;
     }
