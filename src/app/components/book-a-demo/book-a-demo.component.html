@@ -6,7 +6,7 @@
             <div class="row form-group">
                 <div class="col-12">
                     <input type="text" [ngClass]="{'is-invalid': submitted && f.fname.errors }" formControlName="fname"
-                        placeholder="FIRST NAME*">
+                        placeholder="First Name*">
                     <div *ngIf="submitted && f.fname.errors" class="invalid-feedback">
                         <div *ngIf="f.fname.errors.required">First Name is required</div>
                     </div>
@@ -15,7 +15,7 @@
             <div class="row form-group">
                 <div class="col-12">
                     <input type="text" [ngClass]="{'is-invalid': submitted && f.lname.errors }" formControlName="lname"
-                        placeholder="LAST NAME*">
+                        placeholder="Last Name*">
                     <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
                         <div *ngIf="f.lname.errors.required">Last Name is required</div>
                     </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="row form-group">
                 <div class="col-12">
-                    <input type="email" required formControlName="email" placeholder="EMAIL*"
+                    <input type="email" required formControlName="email" placeholder="Email*"
                         [ngClass]="{'is-invalid': submitted && f.email.errors }">
                     <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                         <div *ngIf="f.email.errors.required">Email is required</div>
@@ -36,7 +36,7 @@
             </div>
             <div class="row form-group">
                 <div class="col-12">
-                    <input type="number" formControlName="phone" placeholder="PHONE NUMBER*"
+                    <input type="number" formControlName="phone" placeholder="Phone Number*"
                         [ngClass]="{'is-invalid': submitted && f.phone.errors }">
                     <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                         <div *ngIf="f.phone.errors.required">Phone number is required</div>
@@ -133,7 +133,7 @@
             <div class="row my-5">
                 <div class="col">
                     <!-- [disabled]="createScheduleForm.invalid" -->
-                    <button class="button" (click)="onSubmit()">SUBMIT</button>
+                    <button class="button" (click)="onSubmit()">Submit</button>
                 </div>
             </div>
         </div>

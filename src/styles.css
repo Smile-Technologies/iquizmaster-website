@@ -10,7 +10,7 @@ body, html{
     border: none;
     outline: none;
     padding: 12px 25px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     line-height: normal;
 }
 .button_white{
